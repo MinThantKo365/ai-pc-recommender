@@ -8,4 +8,87 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-primary: #0b0c10;
+    --color-secondary: #1f2833;
+    --color-secondary-light: #2a3542;
+
+    --color-accent: #39ff14;
+    --color-accent-hover: #2ee010;
+    --color-accent-soft: #39ff141a;
+
+    --color-muted: #c5c6c7;
+
+    --color-gemini-blue: #4796e3;
+    --color-gemini-purple: #9177c7;
+    --color-gemini-coral: #ca6673;
+}
+
+@layer components {
+    .form-input {
+        @apply w-full rounded-xl border border-secondary-light bg-primary px-4 py-3 text-white outline-none transition placeholder:text-muted/60 focus:border-accent focus:ring-2 focus:ring-accent/25;
+    }
+
+    .form-label {
+        @apply block text-sm font-medium text-white;
+    }
+
+    .form-hint {
+        @apply mt-1 text-xs text-muted;
+    }
+
+    .option-card {
+        @apply rounded-xl border border-secondary-light bg-primary px-4 py-3 text-white transition hover:border-accent/40;
+    }
+
+    .option-card-checked {
+        @apply border-accent bg-accent-soft ring-2 ring-accent/25;
+    }
+
+    .btn-cta {
+        @apply w-full rounded-xl bg-accent px-6 py-3.5 text-sm font-bold text-primary shadow-lg shadow-accent/25 transition hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent/50;
+    }
+
+    .card-container {
+        @apply rounded-2xl border border-secondary-light bg-secondary p-6 shadow-xl shadow-black/40 sm:p-8;
+    }
+
+    .badge-ai {
+        @apply inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent;
+    }
+
+    .badge-gemini {
+        @apply inline-flex items-center gap-2 rounded-full border border-secondary-light bg-secondary px-3.5 py-1.5 text-xs font-semibold tracking-wide;
+    }
+
+    .badge-gemini-icon {
+        @apply size-[18px] shrink-0;
+    }
+
+    .badge-gemini-text {
+        background: linear-gradient(90deg, var(--color-gemini-blue), var(--color-gemini-purple), var(--color-gemini-coral));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .badge-match {
+        @apply inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-bold text-accent;
+    }
+
+    .usage-checkbox {
+        @apply relative flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 border-secondary-light bg-primary transition;
+    }
+
+    .usage-checkbox-icon {
+        @apply h-3.5 w-3.5 text-accent opacity-0 transition-opacity;
+    }
+
+    .usage-option:has(input:checked) .usage-checkbox {
+        @apply border-accent bg-accent-soft;
+    }
+
+    .usage-option:has(input:checked) .usage-checkbox-icon {
+        @apply opacity-100;
+    }
 }

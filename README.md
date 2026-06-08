@@ -107,15 +107,16 @@ composer run dev
 
 ---
 
-## Running tests
+## Running project or test
 
 ```bash
-php artisan test
+php artisan serve
 ```
 
 Or:
 
 ```bash
+php artisan test
 composer test
 ```
 
